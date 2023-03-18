@@ -1,0 +1,67 @@
+:root {
+    --font: 'Courier New', Courier, monospace;
+    --main-color: rgb(0, 200, 0);
+}
+
+body {
+    font-family: var(--font);
+    color: var(--main-color);
+    background-color: black;
+}
+
+button {
+    border-radius: none;
+    font-family: var(--font);
+    color: rgb(0, 200, 0);
+    --light-border: rgb(108, 108, 108);
+    --dark-border: black;
+    background-color: rgb(54, 54, 54);
+    border-bottom: black 2px solid;
+    border-right: black 2px solid;
+    border-top: rgb(108, 108, 108) 2px solid;
+    border-left: rgb(108, 108, 108) 2px solid;
+}
+
+button:active {
+    border-bottom: var(--light-border) 2px solid;
+    border-right: var(--light-border) 2px solid;
+    border-top: var(--dark-border) 2px solid;
+    border-left: var(--dark-border) 2px solid;
+    color: rgb(0, 150, 0);
+}
+
+hr {
+    border-color: var(--main-color);
+}
+
+#panel, #flip {
+    padding: 5px;
+    text-align: center;
+    background-color: #252525;
+    border: solid 1px #333333;
+  }
+  
+  #panel {
+    padding: 50px;
+    display: none;
+  }
+
+#loading svg {
+    height: 1.5em;
+    width: 1.5em;
+}
+
+p.cats {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+a {
+    color:rgb(0, 255, 0)
+}
