@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="index.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/98.css"
+    >
+    <style>
+    .resizable-input {
+        width: 75vw;
+        height: 75vh;
+        resize: both;
+    }
+
+    /* @font-face {
+	    font-family: serif;
+		font-style: normal;
+		font-weight: 400;
+		src: url(https://jdan.github.io/98.css/ms_sans_serif.woff) format("woff");
+		src: url(https://jdan.github.io/98.css/ms_sans_serif.woff2) format("woff2")
+	} */
+
+    h1, h2, h3, h4, h5, h6, p, textarea, input, legend, label{
+        font-family: serif;
+    } 
+
+    body {
+        background-color: #c0c0c0;
+    }
+    
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+      -moz-appearance: textfield;
+    }
+    
+    </style>
+</head>
+<body>
+    <h2>WL notes</h2>
+    <hr>
+    <button id="test">TEST!</button>
+    <input type="number" min="12" max="48"><br>
+    <textarea type="text" class="resizable-input"></textarea>
+</body>
+</html>
