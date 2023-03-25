@@ -1,0 +1,71 @@
+body {
+    background-image: url(https://images.unsplash.com/photo-1488972685288-c3fd157d7c7a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-size: cover;
+    color: azure;
+    font-family: 'Ubuntu';
+}
+
+h1 {margin: 0;}
+
+#panel, #flip {
+    text-align: center;
+    background-color: #252525;
+    border: solid 1px #333333;
+  }
+  
+  #panel {
+    padding: 50px;
+    width: calc(25vw - 110px);
+  }
+#flip {
+    text-align: left;
+    width: calc(25vw - 10px);
+}
+#loading svg {
+    height: 1.5em;
+    width: 1.5em;
+}
+
+p.cats {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+a {
+    color:rgb(0, 255, 0)
+}
+
+.drag {
+    height: 1em;
+    width: calc(25vw - 110px)
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+hr {
+    width: 75%;
+}
