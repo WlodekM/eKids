@@ -1,21 +1,22 @@
 body {
     background-image: url(https://images.unsplash.com/photo-1488972685288-c3fd157d7c7a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80);
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
     background-size: cover;
     margin: 0;
     padding: 0;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .main {
     margin: 0;
     padding: 0;
     background-color: rgba(0, 0, 0, 0.5);
+    background-repeat: repeat-y;
     background-size: cover;
     color: azure;
     font-family: 'Ubuntu';
     width: 100%;
-    height: calc(100% - 75px);
+    min-height: calc(100vh - 75px);
     display: flex;
     flex-direction: column;
 }
