@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <title>Backend</title>
+</head>
+<script>
+    function dummy() {}
+    if(!localStorage.getItem("token")) {
+        window.location.replace("..");
+    }
+    async function signup(pass) {
+        // Код з https://reqbin.com/
+        let url = 'https://auth-383413.uc.r.appspot.com/changepassword';
+
+        let data = `{
+            "password":"${pass}"
+        } `;
+        let auth = `{
+            "password":"${pass}"
+        } `;
+
+        let response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization':`Bearer ${localStorage.getItem("token")}`
+            },
+            body: data
+        });
+
+        let text = await response.text();
+
+        console.log(text);
+        if(JSON.parse(text)["token"]) {
+            localStorage.setItem("token",JSON.parse(text)["token"])
+            console.log(`Succsess! Token is ${JSON.parse(text)["token"]} and is now stored in localstorge!`);
+            $("#result").text("Succsess!")
+        }
+    }
+    $(document).ready(function(){
+        $("form").submit(function(e) {
+            e.preventDefault(); // prevent page refresh
+            console.log(`Password: ${$("#pass").val()}`);
+            let password = $("#pass").val()
+            if(password){
+                signup(password)
+            } else {
+                $("#result").text("Please, fill out al of the fields!")
+                console.log("Form not filled ");
+            }
+        });
+        $("#show").click(function(){
+            var x = document.getElementById("pass");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        });
+    });
+</script>
+<style>
+    #result {
+        color: red;
+    }
+</style>
+<body>
+    <header class="nav">
+            <div>
+                <img src="../logo.jpg">
+            </div>
+        <ul>
+            <li>
+            <a href="..">Home</a>
+            </li>
+            <li>
+            <a href="../signup">Sign up</a>
+            </li>
+            <li>
+            <a href="../login">Log in</a>
+            </li>
+            <li>
+            <a href="../logout">Log out</a>
+            </li>
+            <li>
+            <a href="../pass">Change password</a>
+            </li>
+        </ul>
+    </header>
+    <main class="main">
+        <form action="">
+            <label for="pass">New password:</label>
+            <input id="pass" maxlength="20" type="text" value="">                <br>
+            <input type="submit" id="signup" value="Change password"><span id="result"></span>
+        </form>
+    </main>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <title>Backend</title>
+</head>
+<script>
+    $(document).ready(function(){
+        if(!localStorage.getItem("token")) {
+            $(".main").empty()
+            $(".main").append("<h1>It looks like you're not logged in!</h1><p>Please, log in at <a href=\"login\">/login</a>")
+        }
+    });
+</script>
+<style>
+    .main h1{
+        margin-top: 0;
+    }
+    #result {
+        color: red;
+    }
+</style>
+<body>
+    <header class="nav">
+            <div>
+                <img src="logo.jpg">
+            </div>
+        <ul>
+            <li>
+            <a href="">Home</a>
+            </li>
+            <li>
+            <a href="./signup">Sign up</a>
+            </li>
+            <li>
+            <a href="./login">Log in</a>
+            </li>
+            <li>
+            <a href="./logout">Log out</a>
+            </li>
+            <li>
+            <a href="./pass">Change password</a>
+            </li>
+        </ul>
+    </header>
+    <main class="main">
+        <h1>Welcome, [INSERT USERNAME HERE]!</h1>
+    </main>
+</body>
+</html>

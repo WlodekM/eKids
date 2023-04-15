@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <title>Backend</title>
+</head>
+<script>
+    if(localStorage.getItem("token")) {
+        window.location.replace("..");
+    }
+    async function signup(username,pass,email) {
+        // Код з https://reqbin.com/
+        let url = 'https://auth-383413.uc.r.appspot.com/signup';
+
+        let data = `{
+            "userName":"${username}",
+            "password": "${pass}",
+            "email": "${email}"
+        } `;
+
+        let response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: data,
+        });
+
+        let text = await response.text();
+
+        console.log(text);
+        if(JSON.parse(text)["token"]) {
+            localStorage.setItem("token",JSON.parse(text)["token"])
+            console.log(`Succsess! Token is ${JSON.parse(text)["token"]} and is now stored in localstorge!`);
+        }
+    }
+    $(document).ready(function(){
+        $("form").submit(function(e) {
+            e.preventDefault(); // prevent page refresh
+            console.log(`Username: ${$("#username").val()}`);
+            console.log(`Password: ${$("#pass").val()}`);
+            console.log(`E-Mail: ${$("#email").val()}`);
+            let username = $("#username").val()
+            let password = $("#pass").val()
+            let email    = $("#email").val()
+            if(username&&password&&email){
+                signup($("#username").val(),$("#pass").val(),$("#email").val())
+            } else {
+                $("#result").text("Please, fill out al of the fields!")
+                console.log("Form not filled ");
+            }
+        }); 
+        $("#show").click(function(){
+            var x = document.getElementById("pass");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        });
+    });
+</script>
+<style>
+    #result {
+        color: red;
+    }
+</style>
+<body>
+    <header class="nav">
+            <div>
+                <img src="../logo.jpg">
+            </div>
+        <ul>
+            <li>
+            <a href="..">Home</a>
+            </li>
+            <li>
+            <a href="../signup">Sign up</a>
+            </li>
+            <li>
+            <a href="../login">Log in</a>
+            </li>
+            <li>
+            <a href="../logout">Log out</a>
+            </li>
+            <li>
+            <a href="../pass">Change password</a>
+            </li>
+        </ul>
+    </header>
+    <main class="main">
+        <form>
+            <label for="username">Username:</label>
+            <input id="username" maxlength="20" type="text" value="Server"><br>
+            <label for="username">Password:</label>
+            <input id="pass" maxlength="20" type="password" value="">      <br>
+            <label for="username">E-Mail:</label>
+            <input id="email" type="email" value="jhondoe@gmail.com">      <br>
+            <label for="username">Show password:</label><input type="checkbox"id="show"><br>
+            <input type="submit" id="signup" value="Sign up"><span id="result"></span>
+        </form>
+    </main>
+</body>
+</html>
