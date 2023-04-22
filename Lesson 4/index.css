@@ -8,6 +8,14 @@ body {
     min-height: 100vh;
 }
 
+h1 {margin-top: 0;}
+
+button:hover{
+    cursor: pointer;
+    background: black;
+    color: white;
+}
+
 .main {
     margin: 0;
     padding: 0;
@@ -21,7 +29,7 @@ body {
     flex-direction: column;
 }
 
-.main#center {
+main#center {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -55,10 +63,64 @@ body {
 }
 .nav a{
     text-decoration: underline;
+    color: black;
 }
 .nav a:hover{
     cursor: pointer;
+    color: #333333;
 }
 .nav img{
     height: 100%;
+}
+.nav button, .nav-style-button{
+    border-radius: 0;
+    border: 2px black solid;
+    background: white;
+    color: black;
+    padding-inline: 15px;
+    padding-block: 10px;
+}
+
+.nav button:hover, .nav-style-button:hover {
+    background: black;
+    color: white;
+}
+
+.main-button {
+    background: transparent;
+    color: white;
+    border-color: white;
+}
+
+.main-button:hover {
+    background: white !important;
+    color: black;
+}
+
+.section #section-header {
+    padding-top: 25px;
+}
+
+.section {
+    min-height: 100vh;
+    background: white;
+    color: black;
+}
+
+section#about {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+
+.about-section {
+    display: flex;
+    justify-content: space-around;
+}
+
+.about-image {
+    width: 400px;
+    height: 500px;
+    border-radius: 15px;
 }
