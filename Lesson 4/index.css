@@ -8,9 +8,23 @@ body {
     min-height: 100vh;
 }
 
-h1 {margin-top: 0;}
 
-button:hover{
+.separator {
+    width: 150px;
+    height: 1px;
+    background: black;
+}
+
+main {
+    padding-top: 75px;
+}
+
+
+h1 {
+    margin-top: 0;
+}
+
+button:hover {
     cursor: pointer;
     background: black;
     color: white;
@@ -29,7 +43,7 @@ button:hover{
     flex-direction: column;
 }
 
-main#center {
+.main#center {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -42,7 +56,10 @@ main#center {
     display: flex;
     background: white;
     height: 75px;
+    position: fixed;
+    width: 100%;
 }
+
 .nav ul {
     padding-inline-start: 80px;
     width: 100%;
@@ -52,7 +69,8 @@ main#center {
     align-items: center;
     list-style: none;
 }
-.nav div{
+
+.nav div {
     display: block;
     list-style-type: disc;
     margin-block-start: 1em;
@@ -61,18 +79,23 @@ main#center {
     margin-inline-end: 0px;
     padding-inline: 20px;
 }
-.nav a{
+
+.nav a {
     text-decoration: underline;
     color: black;
 }
-.nav a:hover{
+
+.nav a:hover {
     cursor: pointer;
     color: #333333;
 }
-.nav img{
+
+.nav img {
     height: 100%;
 }
-.nav button, .nav-style-button{
+
+.nav button,
+.nav-style-button {
     border-radius: 0;
     border: 2px black solid;
     background: white;
@@ -81,7 +104,8 @@ main#center {
     padding-block: 10px;
 }
 
-.nav button:hover, .nav-style-button:hover {
+.nav button:hover,
+.nav-style-button:hover {
     background: black;
     color: white;
 }
@@ -90,6 +114,7 @@ main#center {
     background: transparent;
     color: white;
     border-color: white;
+    width: 224px;
 }
 
 .main-button:hover {
@@ -99,6 +124,7 @@ main#center {
 
 .section #section-header {
     padding-top: 25px;
+    width: 100%;
 }
 
 .section {
@@ -117,10 +143,31 @@ section#about {
 .about-section {
     display: flex;
     justify-content: space-around;
+    max-width: 1000px;
+    margin: auto;
+    width: 100%;
+}
+
+.about-content {
+    width: 500px;
 }
 
 .about-image {
     width: 400px;
     height: 500px;
     border-radius: 15px;
+}
+
+.check-bg {
+    background: #d9d9d9;
+    border-radius: 7.5px;
+    width: min-content;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.row {
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
 }
